@@ -1,0 +1,242 @@
+<!DOCTYPE HTML>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Projects - Machine Learning</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+				<!-- Note: The "styleN" class below should match that of the banner element. -->
+					<header id="header" class="alt style2">
+						<a href="index.html" class="logo"><strong>Kunal Shah</strong> <span>Machine Learning</span></a>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<ul class="links">
+							<li><a href="index.html">Home</a></li>
+							<li><a href="landing.html">Landing</a></li>
+							<li><a href="generic.html">Generic</a></li>
+							<li><a href="elements.html">Elements</a></li>
+						</ul>
+					</nav>
+
+				<!-- Banner -->
+				<!-- Note: The "styleN" class below should match that of the header element. -->
+					<section id="banner" class="style2">
+						<div class="inner">
+							<span class="image">
+								<img src="images/gt_background.jpg" alt="" />
+							</span>
+							<header class="major">
+								<h1>Analysis of Prosthetic Leg Data with Supervised and Unsupervised Methods</h1>
+							</header>
+							<div class="content">
+								<p>A brief summary of work done for my Master's<br />
+									program at Georgia Tech (CS7641: Machine Learning)<br />
+								</p>
+							</div>
+						</div>
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- One -->
+							<section id="one">
+								<div class="inner">
+									<header class="major">
+										<h2>Project Overview</h2>
+									</header>
+									<p>The Machine Learning course (CS7641) that I took at Georgia Tech was primarily
+										focused on in-depth analyses done on 'interesting' datasets of our choice. These
+										projects involved a variety of machine learning tools and techniques including
+										data visualization, accuracy metrics, training/validation curves, time
+										complexity, hyperparameter tuning, and many more.
+										<br><br>
+										These deep dives into each algorithm and concept helped me to build foundational
+										knowledge that could be used in other projects. Additionally, I was able to gain
+										an intuition for the different conditions that may affect different algorithms
+										and get a better understanding on which one could be appropriate for a given
+										task.
+										<br><br>
+										The following is a brief overview of a two-part project from the Machine Learning
+										course. In this project, I analyzed a single dataset, experimenting with each
+										of the following:
+
+										<div class="row">
+											<div class="col-4 col-12-medium">
+
+												<h4>Supervised Methods</h4>
+												<ul>
+													<li>Decision trees with pruning</li>
+													<li>Neural networks</li>
+													<li>Boosting (AdaBoost)</li>
+													<li>Support Vector Machines</li>
+													<li>k-nearest neighbors</li>
+												</ul>
+
+											</div>
+											<div class="col-4 col-12-medium">
+
+												<h4>Dimensionality Reduction</h4>
+												<ul>
+													<li>Principle Component Analysis (PCA)</li>
+													<li>Independent Component Analysis (ICA)</li>
+													<li>Randomized Projections</li>
+													<li>Linear Discriminant Analysis</li>
+												</ul>
+
+											</div>
+											<div class="col-4 col-12-medium">
+
+												<h4>Clustering</h4>
+												<ul>
+													<li>k-means</li>
+													<li>Expectation Maximization</li>
+												</ul>
+
+											</div>
+
+										</div>
+
+									</p>
+
+
+									<header class="major">
+										<h2>Dataset Description</h2>
+									</header>
+									<p>The dataset was collected at the Shirley Ryan AbilityLab using a powered prosthetic leg on 2 different
+										able-bodied users.
+
+										<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5802866/">During ambulation,
+											data were acquired simultaneously from 22 channels from mechanical sensors
+											embedded on the prosthesis.
+										</a>
+
+										<br /><br />
+
+										The data were collected having the user complete
+										various ambulation tasks such as normal walking and going up and down
+										stairs and ramps resulting in a total of
+										<b>2386</b> examples
+										(<b>132</b> features for each example).
+										The labels for this data consist of 8 classes:
+										Level Walking<b> (LW)</b>,
+										Toe Off<b> (TO)</b>,
+										Ramp Descent<b> (RD)</b>,
+										Stair Descent<b> (SD)</b>,
+										Standing Toe Off<b> (STTO)</b>,
+										Standing Heel Contact<b> (STHC)</b>,
+										Mid-Swing<b> (MSW)</b>,
+										and Mid-Stance<b> (MST)</b>.
+										<br /><br />
+									</p>
+								</div>
+							</section>
+
+						<!-- Two -->
+							<section id="two" class="spotlights">
+								<section>
+									<a href="generic.html" class="image">
+										<img src="images/clusters.PNG" alt="" data-position="center center" />
+									</a>
+									<div class="content">
+										<div class="inner">
+											<header class="major">
+												<h3>Detailed Analysis</h3>
+											</header>
+											<p>The experimentation with the supervised and unsupervised algorithms
+												gave me a better intuition on how I could leverage different tools
+												when using unique datasets. To read the in-depth analyses done with this
+												data, follow the links below. The foundation I built from these projects
+												translated well to
+												<a href="lower-limb-classifier.html">my work developing an intent
+													recognition system for the powered prosthetic legs in the Center for Bionic Medicine.</a>
+											</p>
+											<ul class="actions">
+												<li><a href="supervised_learning.pdf" class="button">Supervised Learning</a></li>
+												<li><a href="unsupervised_learning.pdf" class="button">Unsupervised Learning</a></li>
+
+											</ul>
+										</div>
+									</div>
+								</section>
+
+							</section>
+
+					</div>
+
+				<!-- Contact -->
+				<section id="contact">
+					<div class="inner">
+						<img src="images/pic03.jpg" alt="" />
+						<section class="split">
+							<section>
+								<div class="contact-method">
+									<span class="icon solid alt fa-envelope"></span>
+									<h3>Email</h3>
+									<a href="#">kunaltshah@gmail.com</a>
+								</div>
+							</section>
+							<section>
+								<div class="contact-method">
+									<span class="icon solid alt fa-phone"></span>
+									<h3>Phone</h3>
+									<span>(325) 370-5285</span>
+								</div>
+							</section>
+							<section>
+								<div class="contact-method">
+									<span class="icon solid alt fa-home"></span>
+									<h3>Location</h3>
+									<span>Chicago, IL</span>
+								</div>
+							</section>
+						</section>
+					</div>
+				</section>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<div class="inner">
+						<ul class="icons">
+							<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+							<li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+						</ul>
+						<ul class="copyright">
+							<li>&copy; Kunal Shah<li>All Rights Reserved</li></li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</div>
+				</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

@@ -1,0 +1,236 @@
+<!DOCTYPE HTML>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Projects - Crash Map</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+				<!-- Note: The "styleN" class below should match that of the banner element. -->
+					<header id="header" class="alt style2">
+						<a href="index.html" class="logo"><strong>Kunal Shah</strong> <span>Crash Map</span></a>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<ul class="links">
+							<li><a href="index.html">Home</a></li>
+							<li><a href="landing.html">Landing</a></li>
+							<li><a href="generic.html">Generic</a></li>
+							<li><a href="elements.html">Elements</a></li>
+						</ul>
+					</nav>
+
+				<!-- Banner -->
+				<!-- Note: The "styleN" class below should match that of the header element. -->
+					<section id="banner" class="style2">
+						<div class="inner">
+							<span class="image">
+								<img src="images/gt_background.jpg" alt="" />
+							</span>
+							<header class="major">
+								<h1>Crash Map</h1>
+							</header>
+							<div class="content">
+								<p>
+									An Interactive Tool to Identify Severe Crash Areas
+								</p>
+							</div>
+						</div>
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- One -->
+							<section id="one">
+								<div class="inner">
+									<header class="major">
+										<ul class="actions">
+											<li><a href="https://crashmap-api-heroku.herokuapp.com/" class="button">Use Crash Map</a></li>
+										</ul>
+									</header>
+									<header class="major">
+										<h2>Project Overview</h2>
+									</header>
+									<p>Crash Map is an interactive tool to identify areas on a map that have a high risk
+										for accidents based on historical data. I collaborated with 3 team members and
+										leveraged the following tools to create Crash Map:
+										<br>
+										<ul>
+											<li>D3, a JS library, to create the interactive map framework and GUI</li>
+											<li>Leaflet, a JS library, to handle the routing and navigation on the map</li>
+											<li>XGBoost, a Python implementation for gradient boosted decision
+												trees, to label severity of locations based on historical
+												crash data (location, time, and weather)
+											</li>
+											<li>Flask, a Python web framework module, that facilitated data for visualization to D3 and Leaflet</li>
+										</ul>
+
+									</p>
+
+
+									<header class="major">
+										<h2>How to Use Crash Map</h2>
+									</header>
+									<p>
+										<ul>
+											<li>
+												<a href="https://crashmap-api-heroku.herokuapp.com/">Go to Crash Map</a>
+											</li>
+											<li>
+												<b>
+													NOTE: Crash Map is hosted on a free version of Heroku.
+													Because of this it may take 15-30 seconds for the Heroku
+													server to reload the app after a period of inactivity (which is almost always).
+												</b>
+											</li>
+											<li>Select values for each of the fields</li>
+											<li>Click <b>Submit</b></li>
+											<li>
+												The map should be populated with points predicting accident severity
+												based on historical data. (The fields may need to be filled/submitted
+												twice. TODO: Fix this bug)
+											</li>
+											<li>
+												A route can then be selected on the map to view the potential impact
+												of weather on the trip. (TODO: add functionality to reroute to avoid
+												high risk areas)
+											</li>
+										</ul>
+									</p>
+
+
+									<header class="major">
+										<h2>Potential Future Work</h2>
+									</header>
+									<p>
+										<ul>
+											<li>
+												Update hosting and interface of Crash Map to be more stable, responsive
+												and user-friendly
+											</li>
+											<li>
+												Add information for other locations rather than being restricted only
+												to NY
+											</li>
+											<li>
+												Add crash likelihood predictions in addition to crash severity
+											</li>
+											<li>
+												Collect new information to add to the existing dataset
+											</li>
+											<li>
+												Various bug fixes
+											</li>
+										</ul>
+									</p>
+
+								</div>
+							</section>
+
+						<!-- Two -->
+							<section id="two" class="spotlights">
+								<section>
+									<a href="generic.html" class="image">
+										<img src="images/clusters.PNG" alt="" data-position="center center" />
+									</a>
+									<div class="content">
+										<div class="inner">
+											<header class="major">
+												<h3>Detailed Analysis</h3>
+											</header>
+											<p>The experimentation with the supervised and unsupervised algorithms
+												gave me a better intuition on how I could leverage different tools
+												when using unique datasets. To read the in-depth analyses done with this
+												data, follow the links below. The foundation I built from these projects
+												translated well to
+												<a href="lower-limb-classifier.html">my work developing an intent
+													recognition system for the powered prosthetic legs in the Center for Bionic Medicine.</a>
+											</p>
+											<ul class="actions">
+												<li><a href="supervised_learning.pdf" class="button">Supervised Learning</a></li>
+												<li><a href="unsupervised_learning.pdf" class="button">Unsupervised Learning</a></li>
+
+											</ul>
+										</div>
+									</div>
+								</section>
+
+							</section>
+
+					</div>
+
+				<!-- Contact -->
+				<section id="contact">
+					<div class="inner">
+						<img src="images/pic03.jpg" alt="" />
+						<section class="split">
+							<section>
+								<div class="contact-method">
+									<span class="icon solid alt fa-envelope"></span>
+									<h3>Email</h3>
+									<a href="#">kunaltshah@gmail.com</a>
+								</div>
+							</section>
+							<section>
+								<div class="contact-method">
+									<span class="icon solid alt fa-phone"></span>
+									<h3>Phone</h3>
+									<span>(325) 370-5285</span>
+								</div>
+							</section>
+							<section>
+								<div class="contact-method">
+									<span class="icon solid alt fa-home"></span>
+									<h3>Location</h3>
+									<span>Chicago, IL</span>
+								</div>
+							</section>
+						</section>
+					</div>
+				</section>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<div class="inner">
+						<ul class="icons">
+							<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+							<li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+						</ul>
+						<ul class="copyright">
+							<li>&copy; Kunal Shah<li>All Rights Reserved</li></li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</div>
+				</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
