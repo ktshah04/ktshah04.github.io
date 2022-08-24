@@ -44,11 +44,11 @@
 								<img src="images/gt_background.jpg" alt="" />
 							</span>
 							<header class="major">
-								<h1>Analysis of Prosthetic Leg Data with Supervised and Unsupervised Methods</h1>
+								<h1>Ambulation Mode Classification of Prosthetic Leg Dataset</h1>
 							</header>
 							<div class="content">
-								<p>A brief summary of work done for my Master's<br />
-									program at Georgia Tech (CS7641: Machine Learning)<br />
+								<p>A brief summary of the experiments and analysis performed to classify a prosthetic <br />
+									leg dataset using supervised and unsupervised methods<br />
 								</p>
 							</div>
 						</div>
@@ -63,22 +63,19 @@
 									<header class="major">
 										<h2>Project Overview</h2>
 									</header>
-									<p>The Machine Learning course (CS7641) that I took at Georgia Tech was primarily
-										focused on in-depth analyses done on 'interesting' datasets of our choice. These
-										projects involved a variety of machine learning tools and techniques including
-										data visualization, accuracy metrics, training/validation curves, time
-										complexity, hyperparameter tuning, and many more.
+									<p>This project involved performing multiple experiments to determine the best
+										algorithm to classify the ambulation mode of the prosthetic leg while walked on
+										over various terrains. To run these experiments I created Python modules and
+										methods which handled:
+										<ul>
+											<li>Data Wrangling</li>
+											<li>Model Training and Evaluation</li>
+									        <li>Hyperparameter Tuning/Grid Search</li>
+											<li>Visualization</li>
+										</ul>
+										The following is a brief overview of a two-part project in which I analyzed a
+									    single dataset, experimenting with each of the following:
 										<br><br>
-										These deep dives into each algorithm and concept helped me to build foundational
-										knowledge that could be used in other projects. Additionally, I was able to gain
-										an intuition for the different conditions that may affect different algorithms
-										and get a better understanding on which one could be appropriate for a given
-										task.
-										<br><br>
-										The following is a brief overview of a two-part project from the Machine Learning
-										course. In this project, I analyzed a single dataset, experimenting with each
-										of the following:
-
 										<div class="row">
 											<div class="col-4 col-12-medium">
 
@@ -94,19 +91,12 @@
 											</div>
 											<div class="col-4 col-12-medium">
 
-												<h4>Dimensionality Reduction</h4>
+												<h4>Unsupervised Methods</h4>
 												<ul>
 													<li>Principle Component Analysis (PCA)</li>
 													<li>Independent Component Analysis (ICA)</li>
 													<li>Randomized Projections</li>
 													<li>Linear Discriminant Analysis</li>
-												</ul>
-
-											</div>
-											<div class="col-4 col-12-medium">
-
-												<h4>Clustering</h4>
-												<ul>
 													<li>k-means</li>
 													<li>Expectation Maximization</li>
 												</ul>
