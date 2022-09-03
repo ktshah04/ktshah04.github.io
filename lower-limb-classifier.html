@@ -129,12 +129,18 @@
 									<div class="content">
 										<div class="inner">
 											<header class="major">
-												<h3>Orci maecenas</h3>
+												<h3>Data Collection</h3>
 											</header>
-											<p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa sed magna lacinia magna pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis tempus.</p>
-											<ul class="actions">
-												<li><a href="generic.html" class="button">Learn more</a></li>
-											</ul>
+											<p>To acquire the data used to train the lower limb intent recognition classifiers,
+												I wrote a real-time Python script which extracted features from a
+												sliding window of incoming sensor data. This script would run for the
+												duration of an experiment while a subject would ambulate on the
+												prosthetic leg for multiple trials of standing, shuffling,
+												level-ground walking, stair ascent/descent, and ramp ascent/descent,
+												while the leg was manually transitioned via a mobile app. The raw
+												sensor data, extracted features, and other metadata for the experiment
+												were saved throughout the session.
+											</p>
 										</div>
 									</div>
 								</section>
@@ -145,12 +151,36 @@
 									<div class="content">
 										<div class="inner">
 											<header class="major">
-												<h3>Rhoncus magna</h3>
+												<h3>Data Cleaning/Organization</h3>
 											</header>
-											<p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa sed magna lacinia magna pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis tempus.</p>
-											<ul class="actions">
-												<li><a href="generic.html" class="button">Learn more</a></li>
-											</ul>
+											<p>The collected features and metadata were saved to binary files which were
+												unusable without custom MATLAB/Python MEX files/packages to read them.
+												I wrote my own Python functions to extract the experiment data without
+												needing to satisfy all dependencies to use the custom packages. Once the
+												information was extracted from the experiment files, I put it through
+												a parsing pipeline I developed in Python which arranged the metadata,
+												features, and labels into CSV files to provide readable, portable, and
+												organized data for other lab members.
+											</p>
+										</div>
+									</div>
+								</section>
+								<section>
+									<a href="generic.html" class="image">
+										<img src="images/pic09.jpg" alt="" data-position="top center" />
+									</a>
+									<div class="content">
+										<div class="inner">
+											<header class="major">
+												<h3>Classifier Model Training</h3>
+											</header>
+											<p>I performed PCA and ULDA to reduce the dimensionality of the input
+												features, depending on the classifier that was being trained. The keyfob
+												mentioned in the <b>Data Collection</b> section served to label the
+												data. I calculated the means, covariances, weights, and offsets for each
+												classifier model with a training script. Each trained classifier model was
+												saved to a corresponding CSV file.
+											</p>
 										</div>
 									</div>
 								</section>
@@ -161,28 +191,37 @@
 									<div class="content">
 										<div class="inner">
 											<header class="major">
-												<h3>Sed nunc ligula</h3>
+												<h3>Real-Time Classification</h3>
 											</header>
-											<p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa sed magna lacinia magna pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis tempus.</p>
-											<ul class="actions">
-												<li><a href="generic.html" class="button">Learn more</a></li>
-											</ul>
+											<p>I added the trained model CSVs for the current user to the Linux based
+												embedded controller which was housed on the prosthetic leg. The same
+												script which extracted features in real-time would use the trained models
+												and incoming data to predict the upcoming mode of the prosthesis.
+											</p>
 										</div>
 									</div>
 								</section>
-							</section>
-
-						<!-- Three -->
-							<section id="three">
-								<div class="inner">
-									<header class="major">
-										<h2>Massa libero</h2>
-									</header>
-									<p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus pharetra. Pellentesque condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus amet pharetra et feugiat tempus.</p>
-									<ul class="actions">
-										<li><a href="generic.html" class="button next">Get Started</a></li>
-									</ul>
-								</div>
+								<section>
+									<a href="generic.html" class="image">
+										<img src="images/pic09.jpg" alt="" data-position="top center" />
+									</a>
+									<div class="content">
+										<div class="inner">
+											<header class="major">
+												<h3>Adaptation</h3>
+											</header>
+											<p>In addition to the predictive algorithm running in real-time, there was
+												an algorithm which looked back at the previous stride to determine the
+												activities which actually happened. This second algorithm then used its
+												estimation of the correct activity to update the corresponding classifier
+												models point wise. Through this method, the predictive models could adapt
+												to the way the current subject was ambulating. Ultimately, I could start
+												with a general model trained across multiple subjects and, as more data
+												was added, the classifiers would tailor themselves to the current subject.
+											</p>
+										</div>
+									</div>
+								</section>
 							</section>
 
 					</div>
