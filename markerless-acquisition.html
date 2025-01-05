@@ -1,0 +1,212 @@
+<!DOCTYPE HTML>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Projects - Intent Recognition</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+				<!-- Note: The "styleN" class below should match that of the banner element. -->
+					<header id="header" class="alt style2">
+						<a href="index.html" class="logo"><strong>Kunal Shah</strong> <span>Markerless Motion Capture</span></a>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<ul class="links">
+							<li><a href="index.html">Home</a></li>
+							<li><a href="bio.html">About Me</a></li>
+							<li><a href="projects.html">Projects</a></li>
+						</ul>
+					</nav>
+
+				<!-- Banner -->
+				<!-- Note: The "styleN" class below should match that of the header element. -->
+					<section id="banner" class="style2">
+						<div class="inner">
+							<span class="image">
+								<img src="images/pic07.jpg" alt="" />
+							</span>
+							<header class="major">
+								<h1>Markerless Motion Capture Acquisition System</h1>
+							</header>
+							<div class="content">
+								<p>An overview of the multi-camera markerless motion capture (MMC) system I developed in the <a href="https://www.sralab.org/research/labs/bionic-medicine">Intelligent Sensing and Rehabilitation Lab (ISR)</a>.
+								</p>
+							</div>
+						</div>
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- One -->
+							<section id="one">
+								<div class="inner">
+									<header class="major">
+										<h2>Overview</h2>
+									</header>
+									<p>In the ISR, a significant focus of our work is video-based movement 
+										 analysis. As the primary developer over the past two years,
+										   I have transformed the MMC from a 2-camera setup that could only record a 
+										   limited number of frames, to a robust, easily-deployable system that can 
+										   record from up to 12 cameras continuously. 
+										<div class="row">
+	
+												<h4>Thus far, the MMC System has been used in the following publications: </h4>
+												<ul>
+													<li><a href="https://arxiv.org/pdf/2303.10654">Markerless Motion Capture and Biomechanical Analysis Pipeline</a></li>
+													<li><a href="https://arxiv.org/pdf/2303.02413">Improved Trajectory Reconstruction for Markerless Pose Estimation</a></li>
+													<li><a href="https://arxiv.org/pdf/2307.16321">Self-Supervised Learning of Gait-Based Biomarkers</a></li>
+													<li><a href="https://ieeexplore.ieee.org/abstract/document/10719940">Biomechanical Arm and Hand Tracking with Multiview Markerless Motion Capture</a></li>
+												</ul>
+	
+										</div>
+									</p>
+								</div>
+							</section>
+
+						<!-- Two -->
+							<section id="two" class="spotlights">
+								<section>
+									<a href="generic.html" class="image">
+										<img src="images/camera_dev.jpg" alt="" data-position="center center" />
+									</a>
+									<div class="content">
+										<div class="inner">
+											<header class="major">
+												<h3>Core Acquisition API</h3>
+											</header>
+											<p>The MMC system utilizes a set of 
+												<a href="https://www.teledynevisionsolutions.com/products/blackfly-s-gige/?model=BFS-PGE-31S4C-C&vertical=machine%20vision&segment=iis"> 
+													FLIR Blackfly GigE cameras</a>
+												, connected over an Ethernet network and synchronized using the IEEE1588 protocol. I 
+												built a custom Python API to control the cameras, using multi-threading
+												to efficiently capture and save images in real-time. The system records
+												at 30 FPS, with the cameras staying synchronized to within 1 ms of each
+												other.
+											</p>
+										</div>
+									</div>
+								</section>
+								<section>
+									<a href="generic.html" class="image">
+										<img src="images/mocap_gui.png" alt="" data-position="top center" />
+									</a>
+									<div class="content">
+										<div class="inner">
+											<header class="major">
+												<h3>User Interface and Deployment</h3>
+											</header>
+											<p>To make the system easy to use, we created a web application 
+												to replace the original terminal interface. The front end uses React and
+												the backend uses a RESTful API to facilitate communication between the acquisition API
+												and the front end. To simplify and standardize deployment, I 
+												containerized the system using Docker. Additionally, I have
+												been adding integration tests to prevent regressions as the system evolves.
+											</p>
+										</div>
+									</div>
+								</section>
+								<section>
+									<a href="generic.html" class="image">
+										<img src="images/asb.jpg" alt="" data-position="top center" />
+									</a>
+									<div class="content">
+										<div class="inner">
+											<header class="major">
+												<h3>Current State and Future Development</h3>
+											</header>
+											<p>The MMC system has been permanently installed in 4 locations in the 
+												Shirley Ryan AbilityLab, and we have collaborators at Northwestern 
+												University, Baylor College of Medicine, and Columbia University using 
+												the system. Additionally, I was able to build a fully portable
+												MMC system that can run from a laptop. We have used this mobile system
+												to collect data at 2 conferences where we recorded almost 200 participants
+												performing a set of 18 standardized tasks. In the hospital, we have 
+												recorded data from over 400 participants. Finally, I recently submitted
+												a <a href="https://grants.nih.gov/grants/guide/rfa-files/RFA-OD-24-011.html">grant proposal to the NIH</a> to further develop the MMC system. The main
+												goals of the grant are to open-source the system, streamline the 
+												deployment of the acquisition system and analysis pipeline, and create 
+												a <a href="https://www.go-fair.org/fair-principles/">FAIR-compliant</a> data layout.
+											</p>
+										</div>
+									</div>
+								</section>
+							</section>
+
+					</div>
+
+				<!-- Contact -->
+				<section id="contact">
+					<div class="inner">
+						<img src="images/pic03.jpg" alt="" />
+						<section class="split">
+							<section>
+								<div class="contact-method">
+									<span class="icon solid alt fa-envelope"></span>
+									<h3>Email</h3>
+									<a href="#">kunaltshah@gmail.com</a>
+								</div>
+							</section>
+							<section>
+								<div class="contact-method">
+									<span class="icon solid alt fa-phone"></span>
+									<h3>Phone</h3>
+									<span>(325) 370-5285</span>
+								</div>
+							</section>
+							<section>
+								<div class="contact-method">
+									<span class="icon solid alt fa-home"></span>
+									<h3>Location</h3>
+									<span>Chicago, IL</span>
+								</div>
+							</section>
+						</section>
+					</div>
+				</section>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<div class="inner">
+						<ul class="icons">
+							<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+							<li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+						</ul>
+						<ul class="copyright">
+							<li>&copy; Kunal Shah<li>All Rights Reserved</li></li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</div>
+				</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
