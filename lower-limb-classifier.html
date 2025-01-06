@@ -46,7 +46,7 @@
 								<img src="images/pic07.jpg" alt="" />
 							</span>
 							<header class="major">
-								<h1>Intent Recognition System for Powered Prosthetic Leg (Images coming soon!)</h1>
+								<h1>Intent Recognition System for Powered Prosthetic Leg</h1>
 							</header>
 							<div class="content">
 								<p>An overview of the classifier system I developed <br />
@@ -66,160 +66,102 @@
 									<header class="major">
 										<h2>Overview</h2>
 									</header>
-									<p>Amputees walking on a powered prosthesis can navigate more difficult terrain
-										(e.g. ramps stairs), and can expend less metabolic energy compared to walking on
-										passive devices. Existing methods of initiating transitions between different
-										modes (level-ground walking, slopes, stairs) are unintuitive and can impose
-										a cognitive burden on the user.
+									<p>Amputees using a powered prosthetic leg need a safe, automatic, and seamless 
+										system to transition between ambulation modes 
+										(e.g. level-ground walking, stair ascent, ramp descent, etc.)
+										by <b>recognizing</b> the user's <b>intent</b> in real time.
 										<br><br>
-										Ideally, a safe, automatic, seamless system would transition the prosthesis
-										between modes by <b>recognizing</b> the user's <b>intent</b> in real time.
+										Over the course of this project, I produced 3 modular Python packages and an
+										analysis toolkit to perform data processing on raw ambulation data, 
+										model training, and real-time classification. Additionally, I delivered an 
+										adaptive prosthetic control algorithm, reducing the training data required for 
+										the baseline model by 20% through integration of patient ambulation data as they
+										walked.
 										<br><br>
-										My high level goals for this project were to develop a robust, modular,
-										user-friendly, and adaptive intent recognition system that was flexible
-										enough to be used with any prosthetic leg in the lab.
-										<br><br>
-										For this project I learned about/utilized the following:
-									<div class="row">
-										<div class="col-4 col-12-medium">
-
-											<h4>Machine Learning</h4>
-											<ul>
-												<li>Supervised Linear Classifiers</li>
-												<li>Principle Component Analysis (PCA)</li>
-												<li>Uncorrelated Linear Discriminant </br>
-													Analysis (ULDA)
-												</li>
-											</ul>
-
-										</div>
-										<div class="col-4 col-12-medium">
-
-											<h4>Data Analysis</h4>
-											<ul>
-												<li>Creating custom Python packages to </br>
-												    clean, organize, train, and analyze </br>
-													data collected from experiments.
-												</li>
-												<li>Data Visualization</li>
-												<li>Data Analysis Pipelines</li>
-											</ul>
-
-										</div>
-										<div class="col-4 col-12-medium">
-
-											<h4>Professional Skills</h4>
-											<ul>
-												<li>Project Planning</li>
-												<li>Interdisciplinary Collaboration</li>
-												<li>Creative Problem-Solving</li>
-											</ul>
-
-										</div>
-
-									</div>
+										The intent recognition system can be seen in action in the video below:
 									</p>
+									<div class="video-container">
+										<iframe 
+											width="560" 
+											height="315" 
+											src="https://www.youtube.com/embed/6uZV-ahQ1tU" 
+											title="YouTube video player" 
+											frameborder="0" 
+											allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+											allowfullscreen>
+										</iframe>
+									</div>
 								</div>
 							</section>
 
 						<!-- Two -->
 							<section id="two" class="spotlights">
 								<section>
-									<a href="generic.html" class="image">
-										<img src="images/pic08.jpg" alt="" data-position="center center" />
+									<a href="images/leg_signals.png" class="image">
+										<img src="images/leg_signals.png" alt="" data-position="center center" />
 									</a>
 									<div class="content">
 										<div class="inner">
 											<header class="major">
-												<h3>Data Collection</h3>
+												<h3>Data Collection/Processing</h3>
 											</header>
-											<p>To acquire the data used to train the lower limb intent recognition classifiers,
-												I wrote a real-time Python script which extracted features from a
-												sliding window of incoming sensor data. This script would run for the
-												duration of an experiment while a subject would ambulate on the
-												prosthetic leg for multiple trials of standing, shuffling,
-												level-ground walking, stair ascent/descent, and ramp ascent/descent,
-												while the leg was manually transitioned via a mobile app. The raw
-												sensor data, extracted features, and other metadata for the experiment
-												were saved throughout the session.
+											<p>I wrote a Python script to process real-time and extract features from 
+												on-board sensors including a load cell and accelerometer. We recorded
+												participants completing activities such as standing, shuffling, 
+												walking, and navigating stairs and ramps. Additionally, I developed an 
+												Android application to manually transition the leg and label the 
+												ambulation mode during data collection. 
+												<br><br>
+												I then wrote a Python package to process the and organize the recorded 
+												sensor data, extracted features, and metadata into CSV files ensuring
+												portability and backwards compatibility.
 											</p>
 										</div>
 									</div>
 								</section>
 								<section>
-									<a href="generic.html" class="image">
-										<img src="images/pic09.jpg" alt="" data-position="top center" />
+									<a href="images/state_machine1.png" class="image">
+										<img src="images/state_machine1.png" alt="" data-position="top center" />
 									</a>
 									<div class="content">
 										<div class="inner">
 											<header class="major">
-												<h3>Data Cleaning/Organization</h3>
+												<h3>Model Training and Real-Time Classification</h3>
 											</header>
-											<p>The collected features and metadata were saved to binary files which were
-												unusable without custom MATLAB/Python MEX files/packages to read them.
-												I wrote my own Python functions to extract the experiment data without
-												needing to satisfy all dependencies to use the custom packages. Once the
-												information was extracted from the experiment files, I put it through
-												a parsing pipeline I developed in Python which arranged the metadata,
-												features, and labels into CSV files to provide readable, portable, and
-												organized data for other lab members.
+											<p>I used dimensionality reduction techniques like PCA and ULDA on the 
+												extracted features and used them to train a set of linear classifiers
+												to predict ambulation mode transitions.
+												<br><br>
+												The trained models were deployed on an embedded Linux controller in the 
+												prosthetic leg. A finite state machine runs on the leg to define 
+												parameters throughout the gait cycle for each mode, like stiffness, 
+												damping, etc. However, transitions between modes rely on manual 
+												transitions or the predicted transitions from the intent recognition 
+												system.
+												<br><br>
+												The script which extracted features in real-time checks the current 
+												state in the state machine and uses incoming data and trained models 
+												to predict the next ambulation mode.
 											</p>
 										</div>
 									</div>
 								</section>
 								<section>
-									<a href="generic.html" class="image">
-										<img src="images/pic09.jpg" alt="" data-position="top center" />
-									</a>
-									<div class="content">
-										<div class="inner">
-											<header class="major">
-												<h3>Classifier Model Training</h3>
-											</header>
-											<p>I performed PCA and ULDA to reduce the dimensionality of the input
-												features, depending on the classifier that was being trained. The keyfob
-												mentioned in the <b>Data Collection</b> section served to label the
-												data. I calculated the means, covariances, weights, and offsets for each
-												classifier model with a training script. Each trained classifier model was
-												saved to a corresponding CSV file.
-											</p>
-										</div>
-									</div>
-								</section>
-								<section>
-									<a href="generic.html" class="image">
-										<img src="images/pic10.jpg" alt="" data-position="25% 25%" />
-									</a>
-									<div class="content">
-										<div class="inner">
-											<header class="major">
-												<h3>Real-Time Classification</h3>
-											</header>
-											<p>I added the trained model CSVs for the current user to the Linux based
-												embedded controller which was housed on the prosthetic leg. The same
-												script which extracted features in real-time would use the trained models
-												and incoming data to predict the upcoming mode of the prosthesis.
-											</p>
-										</div>
-									</div>
-								</section>
-								<section>
-									<a href="generic.html" class="image">
-										<img src="images/pic09.jpg" alt="" data-position="top center" />
+									<a href="images/adaptation.png" class="image">
+										<img src="images/adaptation.png" alt="" data-position="top center" />
 									</a>
 									<div class="content">
 										<div class="inner">
 											<header class="major">
 												<h3>Adaptation</h3>
 											</header>
-											<p>In addition to the predictive algorithm running in real-time, there was
-												an algorithm which looked back at the previous stride to determine the
-												activities which actually happened. This second algorithm then used its
-												estimation of the correct activity to update the corresponding classifier
-												models point wise. Through this method, the predictive models could adapt
-												to the way the current subject was ambulating. Ultimately, I could start
-												with a general model trained across multiple subjects and, as more data
-												was added, the classifiers would tailor themselves to the current subject.
+											<p>
+												I also implemented an adaptive algorithm that updated the classifier 
+												models after each stride, tailoring predictions to the current user’s 
+												walking patterns. Starting with general models trained on multiple 
+												users, the system personalized itself over time, improving performance 
+												and reducing the amount of training data we needed to collect prior to 
+												an experiment.
 											</p>
 										</div>
 									</div>
